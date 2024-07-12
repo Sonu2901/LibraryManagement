@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('janko-ferlic-sfL_QOnmy00-unsplash.jpg');
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+#authors-section, #books-section,#add-book,#borrow-book {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+input, select, button {
+    margin-right: 5px;
+    padding: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Title by Author Name</title>
+    <style>
+        /* Reset some basic elements */
+        body, h1, h2, p, a, img, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            color: #777;
+        }
+
+        /* Main Section Styles */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .book-cover img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .book-info, .author-info, .purchase-links, .sample, .multimedia, .social-media, .related-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .synopsis, .reviews, .author-bio {
+            margin-bottom: 15px;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-info img {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-right: 20px;
+        }
+
+        .purchase-links {
+            text-align: center;
+        }
+
+        .buy-button {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .buy-button:hover {
+            background: #0056b3;
+        }
+
+        .sample-link {
+            display: block;
+            text-align: center;
+            padding: 10px 20px;
+            background: #28a745;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .sample-link:hover {
+            background: #218838;
+        }
+
+        video {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+                    text-decoration: none;
+                    color: #007BFF;
+                }
+
+        .related-content a {
+            display: block;
+            text-align: center;
+            padding: 10px 20px;
+            background: #ffc107;
+            color: #333;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .related-content a:hover {
+            background: #e0a800;
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1><%=data['items'][0]['volumeInfo']['title']%></h1>
+        <h2>By <%=data['items'][0]['volumeInfo']['authors'][0]%></h2>
+    </header>
+    <main>
+        <section class="book-cover">
+            <img src="<%=data['items'][0]['volumeInfo']['imageLinks']['smallThumbnail'] %>" alt="data['items'][1]['volumeInfo']['imageLinks']['smallThumbnail']">
+        </section>
+        <section class="book-info">
+            <p class="synopsis"><%=data["items"][0]["volumeInfo"]["description"]%></p>
+            <p class="reviews">"Amazing book!" - Reviewer</p>
+        </section>
+        <section class="sample">
+            <a href="<%=data['items'][1]['volumeInfo']['previewLink']%>" class="sample-link">Get a Sample preview</a>
+        </section>
+        
+        <section class="social-media">
+            <p>ReaderRating: <%=data['items'][0]['volumeInfo']['averageRating']%> <span>&bigstar;</span></p>
+        </section>
+    </main>
+    <footer>
+        <%if(book.length){%>
+         <h2>Number of stocks available in our Library: <%=book[0]['stocks']%> </h2>
+        <%}else{%>
+        <h2>Sorry,This book is currently unavailble in our Library.</h2> 
+        <%}%>
+    </footer>
+</body>
+</html>

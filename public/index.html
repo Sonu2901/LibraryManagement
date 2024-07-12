@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color:lightblue">
+    <h1>Welcome to our Library</h1>
+    <h1>What do you want to read today or should we suggest?</h1>
+    <div id="authors-section">
+        <h2>Search by Author Name</h2>
+        <form id="author-form" action="/author" method="get">
+            <input type="text" id="author-name" placeholder="Author Name" name="author" required>
+            <button type="submit">Find Books</button>
+        </form>
+        <ul id="authors-list"></ul>
+    </div>
+    <div id="books-section">
+        <h2>Search by Book Name</h2>
+        <form id="book-form" action="/book" method="get">
+            <input type="text" id="book-title" placeholder="Book Title" name="name" required>
+            <button type="submit">Find Book</button>
+        </form>
+        <ul id="books-list"></ul>
+    </div>
+    <div id="add-book">
+        <h2>Gift us a book</h2>
+        <form id="book-form" action="/add" method="post">
+            <input type="text" id="book-title" placeholder="Book Title" name="name" required>
+            <input type="text" id="book-title" placeholder="Author Name" name="Author" required>
+            <input type="text" id="book-title" placeholder="Quantity" name="count" required>
+            <button type="submit">Gift</button>
+        </form>
+        <ul id="books-list"></ul>
+    </div>
+    <div id="borrow-book">
+        <h2>Borrow a book from us</h2>
+        <form id="book-form" action="/borrow" method="post">
+            <input type="text" id="book-title" placeholder="Book Title" name="name" required>
+            <input type="text" id="book-title" placeholder="Quantity" name="count" required>
+            <button type="submit">Borrow</button>
+        </form>
+        <ul id="books-list"></ul>
+    </div>
+    
+</body>
+</html>
