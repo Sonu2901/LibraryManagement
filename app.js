@@ -14,8 +14,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, 'public')));
 const port=3000;
-const url="https://www.googleapis.com/books/v1/volumes?q=";
-const key="&key=AIzaSyAUmeSq4onmb3K9p4wjeamBPQ78JT7jfk8";
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.url,{   
 }).then(() => {
